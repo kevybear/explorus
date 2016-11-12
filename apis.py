@@ -1,5 +1,6 @@
 from amadeus import Flights
 from key import amadeus_key
+from key import instagram_key
 
 flights = Flights(amadeus_key)
 origin = 'BKK'
