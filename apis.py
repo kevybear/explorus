@@ -19,8 +19,10 @@ resp = flights.inspiration_search(
     aggregation_mode=aggregation_mode)
 
 destinations = []
+prices = []
 if __name__ == "__main__":
 	for x in range(len(resp['results'])):
 		destinations.append(resp['results'][x]['destination'])
+		prices.append(resp['results'][x]['price'])
 
 	print destinations
