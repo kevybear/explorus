@@ -16,3 +16,10 @@ resp = flights.inspiration_search(
     duration=duration,
     direct=direct,
     aggregation_mode=aggregation_mode)
+
+destinations = []
+if __name__ == "__main__":
+	for x in range(len(resp['results'])):
+		destinations.append(resp['results'][x]['destination'])
+
+	print destinations
