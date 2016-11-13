@@ -8,12 +8,16 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<name>')
 def hello(name=None):
-    return render_template('index.html', name=name)
+
+	# get city
+	# run algorithm
+	# listPics = ['url', 'url1']
+    return render_template('index.html', listPics=listPics)
 
 
 @app.route("/about")
 def about():
-	return getPointsCoor("New York").content
+	return getPointsCoors("New York")
 
 if __name__ == "__main__":
     app.run(debug=True)

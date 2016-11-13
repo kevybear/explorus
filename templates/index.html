@@ -234,6 +234,22 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+        
+    {% if listPics %}
+    {% for pic in listPics %}
+            <script type="text/javascript">
+            document.getElementById('btn').onclick = function() {
+                var src = pic,
+                    img = document.createElement('img');
+                img.src = src;
+                document.body.appendChild(img);
+            }
+        </script>
+    {% endfor %}
+    {% endif %}
+
+
+
 </body>
 
 
