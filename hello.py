@@ -1,4 +1,4 @@
-#app.py 
+#app.py
 from apis import *
 from flask import jsonify
 from flask import Flask
@@ -19,7 +19,7 @@ def hello(name=None):
 	if request.method == 'POST':
 		myCity = request.form['search']
 		listPics = getPhotos(myCity)
-		print myCity
+
 		return render_template('about.html', listPics=listPics, name=myCity)
 	return render_template('about.html', name=name)
 
