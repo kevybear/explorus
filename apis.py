@@ -12,9 +12,17 @@ def convertToCity(iata):
 	return city
 
 def cityToCountry(iata):
-	url = "https://iatacodes.org/api/v6/countries?api_key=" + iata_key + "&code=" + iata
-    country = json.loads(requests.get(url).contant)["response"][0]['name']
-    return country
+	url = "https://iatacodes.org/api/v6/airports?api_key=" + iata_key + "&code=" + iata
+	country_code = json.loads(requests.get(url).content)["response"][0]["country_code"]
+	url = "https://iatacodes.org/api/v6/countries?api_key=" + iata_key + "&code=" + country_code
+	country = json.loads(requests.get(url).content)['response'][0]['name']
+	return country
+
+def extractLat():
+	pass
+
+def extractLong():
+	pass 
 # =============================== Scripts ==========================================
 
 flights = Flights(amadeus_key)
@@ -41,3 +49,6 @@ prices = []
 for x in range(len(resp['results'])):
 	destinations.append(resp['results'][x]['destination'])
 	prices.append(resp['results'][x]['price'])
+
+print destinations[0]
+print cityToCountry(destinations[0])
