@@ -3,7 +3,6 @@
 <head>
   <title>Explor.us</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   <script src="static/js/jquery.js"></script>
   <script src="static/js/script.js"></script>
 
@@ -23,15 +22,17 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <link rel="stylesheet" type="text/css" href="static/css/search.css" />
 </head>
 
 
 <body>
     {% if listPics %}
     {% for pic in listPics %}
-    <div>
-        <h1>{{pic[0]}}</h1>
-        <img src={{pic[1]}}>
+    <div class="img_wrapper">
+        <!-- <h1>{{pic[0]}}</h1> -->
+        <div class="overlay">{{pic[0]}}</div>
+        <img class="destination"src={{pic[1]}}>
     </div>
     {% endfor %}
     {% endif %}

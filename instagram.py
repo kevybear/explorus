@@ -32,7 +32,7 @@ def getPhotos(city):
 	locations = getPointsCoors(city)
 	names = getPointsNames(city)
 	lis = []
-	for x in range(2):
+	for x in range(4):
 		lat = locations[x][0]
 		lon = locations[x][1]
 		name = names[x]
