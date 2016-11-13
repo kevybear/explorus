@@ -24,9 +24,9 @@ def cityToCountry(iata):
 	url = "https://iatacodes.org/api/v6/cities?api_key=" + iata_key + "&code" + city_code
 	iata = json.loads(requests.get(url).content)
 	return iata"""
-
+"""
 def cityToLatLong(city):
-	
+"""	
 
 # =============================== Scripts ==========================================
 
