@@ -29,13 +29,13 @@ class InstagramLib():
 
 def getPhotos():
 	instagram = InstagramLib()
-	locations = getPointsCoors("San Francisco")
-	names = getPointsNames("San Francisco")
+	locations = getPointsCoors("Honolulu")
+	names = getPointsNames("Honolulu")
 	lis = []
-	for x in range(len(locations)):
+	for x in range(20):
 		lat = locations[x][0]
 		lon = locations[x][1]
-		# name = names[x]
+		name = names[x]
 		photo = instagram.get_photos_from_location(lat, lon, 1)
-		lis.append(photo)
+		lis.append((name,photo))
 	return lis

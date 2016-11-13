@@ -7,7 +7,10 @@ from instagram import *
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/<name>')
+def home():
+	return render_template('index.html')
+
+@app.route('/pics')
 def hello(name=None):
 
 	# get city
