@@ -27,10 +27,10 @@ class InstagramLib():
 		print(self.token)
 		print(self.secret)
 
-def getPhotos():
+def getPhotos(city):
 	instagram = InstagramLib()
-	locations = getPointsCoors("Honolulu")
-	names = getPointsNames("Honolulu")
+	locations = getPointsCoors(city)
+	names = getPointsNames(city)
 	lis = []
 	for x in range(5):
 		lat = locations[x][0]
