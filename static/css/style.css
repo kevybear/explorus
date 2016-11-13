@@ -1,0 +1,43 @@
+form{
+	width:500px;
+	margin:0 auto;
+
+}
+input[type=text]{
+	color:#555;
+}
+
+
+.container-1{
+  /*width: 300px;*/
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+
+.search { 
+	padding:6px 15px 6px 30px;
+	margin:3px; 
+	background: url('./images/search.png') no-repeat 8px 6px; 
+}
+.rounded { 
+	border-radius:15px; 
+	-moz-border-radius:15px; 
+	-webkit-border-radius:15px; 
+}
+
+.lighter{
+	width:100%;
+	height:50px;
+}
+
+.lighter input[type=text]{
+	border:1px solid #d0d0d0;
+	background-color:#fcfcfc;
+}
+
+.name-title{
+	margin-top:-74px !important;
+	margin-bottom: 54px !important;
+}
