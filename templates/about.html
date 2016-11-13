@@ -16,6 +16,9 @@
   <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+  <!-- animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -23,19 +26,25 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <link rel="stylesheet" type="text/css" href="static/css/search.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/style.css" />
 </head>
 
 
 <body>
-    {% if listPics %}
-    {% for pic in listPics %}
-    <div class="img_wrapper">
+    
+    <div class="container-fluid img_wrapper">
+      {% if listPics %}
+      {% for pic in listPics %}
         <!-- <h1>{{pic[0]}}</h1> -->
-        <div class="overlay">{{pic[0]}}</div>
-        <img class="destination"src={{pic[1]}}>
+        <div class="col-md-6">
+          <img class="wow fadeIn destination gallery-small-image" data-wow-delay="0.4s" src={{pic[1]}}>
+          <div class="wow fadeIn overlay" data-wow-delay="0.4s">{{pic[0]}}</div>
+        </div>
+      {% endfor %}
+      {% endif %}
     </div>
-    {% endfor %}
-    {% endif %}
+    
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -60,6 +69,15 @@
         </div>
     </footer>
 </body>
+
+<!-- jQuery -->
+  <script src="static/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+  <script src="static/js/bootstrap.min.js"></script>
+<!-- wow.js -->
+  <script src="static/js/wow.min.js"> </script>
+  <script src="static/js/script.js"> </script>
 
 
 

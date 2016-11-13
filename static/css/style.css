@@ -41,3 +41,14 @@ input[type=text]{
 	margin-top:-74px !important;
 	margin-bottom: 54px !important;
 }
+
+.gallery-small-image {
+  border: solid;
+  border-color: black;
+  border-width: 3px;
+  position: relative;
+}
+.gallery-small-image-1{
+	left:50%;
+	margin-left: -248px;
+}
