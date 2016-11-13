@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About</title>
+  <title>Explor.us</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="static/css/style.css" />
-  <script src="static/js/jquery-1.9.1.js"></script>
+  <script src="static/js/jquery.js"></script>
   <script src="static/js/script.js"></script>
 
   <!-- Bootstrap Core CSS -->
@@ -47,9 +47,6 @@
                     <li>
                         <a href="#about">About</a>
                     </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -66,21 +63,36 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1 class="name-title">hello</h1>
-                        <div class="box">
-                        <!-- search bar -->
-                            <div class="lighter">
-                                <form>
-                                    <span><input type="text" class="search rounded" placeholder="Search..."></span>
-                                </form>
-                            </div>
+                        <h1>Explor.us</h1>
+                        <h2></h2>
+                        <style>
+                        input[type=text] {
+                            width: 200px;
+                            box-sizing: border-box;
+                            border: 1px solid #ccc;
+                            border-radius: 0px;
+                            font-size: 16px;
+                            color: white;
+                            background-color: transparent;
+                            background-image: url('searchicon.png');
+                            background-position: 10px 10px;
+                            background-repeat: no-repeat;
+                            padding: 12px 20px 12px 20px;
+                            -webkit-transition: width 0.4s ease-in-out;
+                            transition: width 0.4s ease-in-out;
+                        }
 
-
-                        </div>
+                        input[type=text]:focus {
+                            width: 50%;
+                        }
+                        </style>
+                        <form>
+                          <input type="text" name="search" placeholder="Find a city...">
+                        </form>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">hkhkhk</span></a>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                             </li>
                         </ul>
                     </div>
@@ -88,15 +100,17 @@
             </div>
 
         </div>
-        <!-- /.container -->
-
     </div>
     <!-- /.intro-header -->
 
-    <!-- Page Content -->
-
-    <!-- /.banner -->
-
+    {% if listPics %}
+    {% for pic in listPics %}
+    <div>
+        <h1>{{pic[0]}}</h1>
+        <img src={{pic[1]}}>
+    </div>
+    {% endfor %}
+    {% endif %}
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -112,25 +126,14 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; Explorus 2016. All Rights Reserved</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
 </body>
 
 

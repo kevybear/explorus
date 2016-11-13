@@ -17,7 +17,7 @@ def hello(name=None):
 	# run algorithm
 	# listPics = ['url', 'url1']
 	listPics = getPhotos()
-	return render_template('index.html', listPics=listPics)
+	return render_template('about.html', listPics=listPics)
 
 
 @app.route("/about")

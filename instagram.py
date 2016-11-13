@@ -32,13 +32,15 @@ def getPhotos():
 	locations = getPointsCoors("Honolulu")
 	names = getPointsNames("Honolulu")
 	lis = []
-	for x in range(5):
+	for x in range(2):
 		lat = locations[x][0]
 		lon = locations[x][1]
 		name = names[x]
 		photo = instagram.get_photos_from_location(lat, lon, 1)
 		if photo:
-			lis.append((name, photo))
+			url = photo[0].get_standard_resolution_url()
+			print url
+			lis.append((name, url))
 		else: 
 			continue
 	return lis
