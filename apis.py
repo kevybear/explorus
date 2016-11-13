@@ -1,6 +1,29 @@
 from amadeus import Flights
 from key import amadeus_key
 from key import instagram_key
+from key import iata_key
+import requests
+from flask import * 
+import ast
+import json
+
+# ============================  Functions ===========================================
+
+
+def convertToIata(city):
+	pass
+
+
+
+def convertToCity(iata):
+	url = "https://iatacodes.org/api/v6/airports?api_key=" + iata_key + "&code=" + iata
+	city = json.loads(requests.get(url).content)["response"][0]['name']
+	return city 
+
+def cityToCountry(city):
+	pass
+
+# =============================== Scripts ==========================================
 
 flights = Flights(amadeus_key)
 origin = 'BKK'
@@ -18,11 +41,14 @@ resp = flights.inspiration_search(
     direct=direct,
     aggregation_mode=aggregation_mode)
 
-destinations = []
-prices = []
-if __name__ == "__main__":
-	for x in range(len(resp['results'])):
-		destinations.append(resp['results'][x]['destination'])
-		prices.append(resp['results'][x]['price'])
 
-	print destinations
+
+destinations = []
+
+prices = []
+for x in range(len(resp['results'])):
+	destinations.append(resp['results'][x]['destination'])
+	prices.append(resp['results'][x]['price'])
+
+
+	
