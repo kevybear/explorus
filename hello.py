@@ -2,7 +2,7 @@
 from apis import *
 from flask import jsonify
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 from instagram import *
 app = Flask(__name__)
 
@@ -10,20 +10,18 @@ app = Flask(__name__)
 def home():
 	return render_template('index.html')
 
-@app.route('/pics')
+@app.route('/', methods=['POST', 'GET'])
 def hello(name=None):
 
 	# get city
 	# run algorithm
-	# listPics = ['url', 'url1']
-	listPics = getPhotos()
-	return render_template('index.html', listPics=listPics)
-
-
-@app.route("/about")
-def about():
-	# return getPointsCoors("New York")
-	return render_template('about.html')
+	myCity = None
+	if request.method == 'POST':
+		myCity = request.form['search']
+		listPics = getPhotos(myCity)
+		print myCity
+		return render_template('about.html', listPics=listPics, name=myCity)
+	return render_template('about.html', name=name)
 
 if __name__ == "__main__":
     app.run(debug=True)
