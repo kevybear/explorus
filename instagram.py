@@ -32,10 +32,13 @@ def getPhotos():
 	locations = getPointsCoors("Honolulu")
 	names = getPointsNames("Honolulu")
 	lis = []
-	for x in range(20):
+	for x in range(5):
 		lat = locations[x][0]
 		lon = locations[x][1]
 		name = names[x]
 		photo = instagram.get_photos_from_location(lat, lon, 1)
-		lis.append((name,photo))
+		if photo:
+			lis.append((name, photo))
+		else: 
+			continue
 	return lis
