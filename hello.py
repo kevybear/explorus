@@ -22,7 +22,8 @@ def hello(name=None):
 
 @app.route("/about")
 def about():
-	return getPointsCoors("New York")
+	# return getPointsCoors("New York")
+	return render_template('about.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
