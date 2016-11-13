@@ -17,7 +17,13 @@ def hello(name=None):
 	# run algorithm
 	# listPics = ['url', 'url1']
 	listPics = getPhotos()
-	return render_template('index.html', listPics=listPics)
+	c = []
+	for x in listPics:
+		if x[1] != []:
+			temp = x[1][0].get_low_resolution_url()
+			
+			c.append(temp)
+	return render_template('index.html', listPics=c)
 
 
 @app.route("/about")

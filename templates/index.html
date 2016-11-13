@@ -87,7 +87,7 @@
                         }
                         </style>
                         <form>
-                          <input type="text" name="search" placeholder="Find a city...">
+                          <input type="text" id="search" name="search" placeholder="Find a city...">
                         </form>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
@@ -137,14 +137,8 @@
         
     {% if listPics %}
     {% for pic in listPics %}
-            <script type="text/javascript">
-            document.getElementById('btn').onclick = function() {
-                var src = pic,
-                    img = document.createElement('img');
-                img.src = src;
-                document.body.appendChild(img);
-            }
-        </script>
+    
+        <img src="{{pic}}"/>
     {% endfor %}
     {% endif %}
 
