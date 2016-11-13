@@ -99,7 +99,18 @@
                 </div>
             </div>
 
+
+
         </div>
+
+    </div>
+     <div class="container">
+        {% if listPics %}
+        {% for pic in listPics %}
+        
+            <img src="{{pic}}"/>
+        {% endfor %}
+        {% endif %}
     </div>
     <!-- /.intro-header -->
 
@@ -135,12 +146,6 @@
     <script src="static/js/bootstrap.min.js"></script>
 
         
-    {% if listPics %}
-    {% for pic in listPics %}
-    
-        <img src="{{pic}}"/>
-    {% endfor %}
-    {% endif %}
 
 
 
