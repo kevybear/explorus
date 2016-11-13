@@ -1,4 +1,5 @@
 from instagram_lib.client import InstagramAPI
+from apis import *
 
 class InstagramLib():
 	def __init__(self):
@@ -11,7 +12,7 @@ class InstagramLib():
 		api = InstagramAPI(access_token=self.token, client_secret=self.secret)
 		return api
 
-	def get_photos_location(self, latitude, longitude, count):
+	def get_photos_from_location(self, latitude, longitude, count):
 		api = self.get_client()
 		loc = api.location_search(lng=longitude, lat=latitude, count=count)
 		recent_media, next_ = api.location_recent_media(location_id = loc[0].id)
@@ -25,3 +26,16 @@ class InstagramLib():
 	def check_keys(self):
 		print(self.token)
 		print(self.secret)
+
+def getPhotos():
+	instagram = InstagramLib()
+	locations = getPointsCoors("San Francisco")
+	names = getPointsNames("San Francisco")
+	lis = []
+	for x in range(len(locations)):
+		lat = locations[x][0]
+		lon = locations[x][1]
+		name = names[x]
+		photo = instagram.get_photos_from_location(lat, lon, 1)
+		lis.append((name, photo))
+	return lis

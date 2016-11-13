@@ -13,7 +13,7 @@ def hello(name=None):
 
 @app.route("/about")
 def about():
-	return getPointsCoor("New York").content
+	return getPointsCoors("New York")
 
 if __name__ == "__main__":
     app.run(debug=True)
