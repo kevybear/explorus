@@ -39,7 +39,6 @@ def getPhotos():
 		photo = instagram.get_photos_from_location(lat, lon, 1)
 		if photo:
 			url = photo[0].get_standard_resolution_url()
-			print url
 			lis.append((name, url))
 		else: 
 			continue
