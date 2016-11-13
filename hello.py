@@ -1,5 +1,6 @@
 #app.py 
-
+from apis import *
+from flask import jsonify
 from flask import Flask
 from flask import render_template
 app = Flask(__name__)
@@ -12,7 +13,7 @@ def hello(name=None):
 
 @app.route("/about")
 def about():
-	return "hey, this is my page"
+	return getPointsCoor("New York").content
 
 if __name__ == "__main__":
     app.run(debug=True)
