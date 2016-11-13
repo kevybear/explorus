@@ -1,0 +1,2 @@
+Taken from modified instagram python library:
+https://github.com/vgavro/python-instagram

@@ -1,0 +1,9 @@
+"""
+Account: annielin143
+Access token:
+(u'387829024.a9a03de.832693a120bc4da183e39c982f030a8c', 
+{u'username': u'annielin143', u'bio': u'', u'website': u'',
+ u'profile_picture': u'https://scontent.cdninstagram.com/
+ t51.2885-19/s150x150/12383630_1651519118433084_1091366395_a.jpg', 
+ u'full_name': u'Annie Lin', u'id': u'387829024'})
+"""
