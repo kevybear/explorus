@@ -18,6 +18,7 @@ def cityToCountry(iata):
 	url = "https://iatacodes.org/api/v6/countries?api_key=" + iata_key + "&code=" + country_code
 	country = json.loads(requests.get(url).content)['response'][0]['name']
 	return country
+
 	
 def getPointsCoors(city):
 	url = "https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?city_name=" + city + "&apikey=" + amadeus_key
@@ -30,6 +31,7 @@ def getPointsCoors(city):
 		longi = location['longitude']
 		coors.append([lats, longi])
 	return coors
+
 
 def getPointsNames(city):
 	url = "https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?city_name=" + city + "&apikey=" + amadeus_key
