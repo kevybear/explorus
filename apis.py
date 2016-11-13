@@ -44,16 +44,11 @@ resp = flights.inspiration_search(
 
 
 destinations = []
+
+prices = []
 for x in range(len(resp['results'])):
 	destinations.append(resp['results'][x]['destination'])
+	prices.append(resp['results'][x]['price'])
 
 
-# if __name__ == "__main__":
-
-
-
-
-
-
-
-
+	
