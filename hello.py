@@ -3,6 +3,7 @@ from apis import *
 from flask import jsonify
 from flask import Flask
 from flask import render_template
+from instagram import *
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,7 +13,8 @@ def hello(name=None):
 	# get city
 	# run algorithm
 	# listPics = ['url', 'url1']
-    return render_template('index.html', listPics=listPics)
+	listPics = getPhotos()
+	return render_template('index.html', listPics=listPics)
 
 
 @app.route("/about")

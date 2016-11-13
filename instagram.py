@@ -35,7 +35,7 @@ def getPhotos():
 	for x in range(len(locations)):
 		lat = locations[x][0]
 		lon = locations[x][1]
-		name = names[x]
+		# name = names[x]
 		photo = instagram.get_photos_from_location(lat, lon, 1)
-		lis.append((name, photo))
+		lis.append(photo)
 	return lis
